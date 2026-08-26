@@ -64,6 +64,11 @@
     form.addEventListener('submit', function(e){
       e.preventDefault();
 
+      // O form usa novalidate para que a validação aconteça aqui, sob nosso controle.
+      // reportValidity() exibe as mensagens nativas do navegador e impede o envio
+      // enquanto nome, mensagem e o consentimento LGPD não estiverem preenchidos.
+      if(!form.reportValidity()){ return; }
+
       var nome = document.getElementById('nome').value.trim();
       var email = document.getElementById('email').value.trim();
       var telefone = document.getElementById('telefone').value.trim();

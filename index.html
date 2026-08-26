@@ -3,186 +3,232 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1c1712">
 <title>Denilson Galvão Advocacia | Advogado em Sorocaba - SP</title>
 <meta name="description" content="Denilson Galvão, advogado em Sorocaba, SP. Atuação em Direito Trabalhista, Previdenciário, Consumidor, Família, Civil e Criminal. 5,0 no Google com 49 avaliações.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%96%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%231c1712'/%3E%3Ccircle cx='32' cy='32' r='30' fill='none' stroke='%23ab8a54' stroke-width='2'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='26' fill='%23ab8a54' text-anchor='middle'%3EDG%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --preto: #14171c;
-    --carvao: #1e222a;
-    --carvao-claro: #2b303a;
-    --branco: #f7f6f3;
-    --cinza: #b7bcc5;
-    --dourado: #c6a15b;
-    --whatsapp: #25D366;
-    --borda: rgba(247,246,243,0.12);
+    --tinta:#1c1712;
+    --tinta-2:#241e17;
+    --tinta-3:#2f2820;
+    --papel:#f6f1e6;
+    --papel-2:#ece3d0;
+    --vinho:#7c2230;
+    --vinho-luz:#9c3140;
+    --latao:#ab8a54;
+    --latao-claro:#c7ad82;
+    --texto:#4c463c;
+    --texto-suave:#736b5c;
+    --texto-claro:#bcb3a1;
+    --linha:rgba(28,23,18,0.13);
+    --linha-clara:rgba(246,241,230,0.14);
+    --whatsapp:#25D366;
+    --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.35 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
     font-family:'Inter',sans-serif;
-    background:var(--branco);
-    color:var(--preto);
-    line-height:1.6;
+    background:var(--papel);
+    color:var(--tinta);
+    line-height:1.65;
     -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
   }
-  h1,h2,h3{font-family:'Playfair Display',serif;}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-.01em;}
   a{color:inherit;}
   img,svg{display:block;max-width:100%;}
-  .container{max-width:1100px;margin:0 auto;padding:0 1.5rem;}
+  .container{max-width:1140px;margin:0 auto;padding:0 1.5rem;}
   .eyebrow{
-    text-transform:uppercase;letter-spacing:.18em;
-    font-size:.75rem;font-weight:600;color:var(--dourado);
+    display:inline-flex;align-items:center;gap:.55rem;
+    text-transform:uppercase;letter-spacing:.16em;
+    font-family:'Space Mono',monospace;
+    font-size:.72rem;font-weight:700;color:var(--vinho);
   }
+  .eyebrow::before{content:"";width:1.4rem;height:1px;background:var(--latao);}
+  .eyebrow.claro{color:var(--latao-claro);}
+  .eyebrow.claro::before{background:var(--latao-claro);}
+  .grain{position:relative;}
+  .grain::before{
+    content:"";position:absolute;inset:0;background-image:var(--grain);
+    background-size:140px 140px;mix-blend-mode:overlay;opacity:.5;pointer-events:none;
+  }
+  .grain > *{position:relative;z-index:1;}
 
   /* HEADER */
   header{
     position:sticky;top:0;z-index:50;
-    background:rgba(20,23,28,0.92);
-    backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--borda);
+    background:rgba(28,23,18,0.94);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--linha-clara);
     box-shadow:0 0 0 rgba(0,0,0,0);
     transition:box-shadow .35s ease, background .35s ease;
   }
-  header.scrolled{background:rgba(20,23,28,0.98);box-shadow:0 6px 24px rgba(0,0,0,.28);}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;max-width:1100px;margin:0 auto;color:var(--branco);}
-  .logo{display:flex;align-items:center;gap:.6rem;font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;letter-spacing:.02em;}
-  .logo svg{width:24px;height:24px;flex-shrink:0;}
-  .nav-links{display:flex;gap:2rem;list-style:none;font-size:.92rem;}
-  .nav-links a{text-decoration:none;opacity:.85;transition:opacity .2s;position:relative;}
-  .nav-links a:hover{opacity:1;}
-  .nav-links a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--dourado);transition:width .25s ease;}
-  .nav-links a:hover::after{width:100%;}
-  .nav-cta{display:inline-flex;align-items:center;gap:.5rem;background:var(--whatsapp);color:#fff;padding:.55rem 1.1rem;border-radius:6px;font-size:.88rem;font-weight:600;text-decoration:none;white-space:nowrap;}
-  .menu-toggle{display:none;background:none;border:0;color:var(--branco);font-size:1.5rem;cursor:pointer;}
+  header.scrolled{background:rgba(20,16,12,0.98);box-shadow:0 10px 30px rgba(0,0,0,.3);}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:.9rem 1.5rem;max-width:1140px;margin:0 auto;color:var(--papel);}
+  .logo{display:flex;align-items:center;gap:.7rem;}
+  .logo-seal{width:38px;height:38px;flex-shrink:0;border-radius:50%;border:1.4px solid var(--latao);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:600;font-size:1rem;color:var(--latao-claro);}
+  .logo-text{display:flex;flex-direction:column;line-height:1.15;}
+  .logo-text strong{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;color:var(--papel);}
+  .logo-text span{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--texto-claro);}
+  .nav-links{display:flex;gap:1.9rem;list-style:none;font-size:.86rem;}
+  .nav-links a{text-decoration:none;opacity:.8;transition:opacity .2s;position:relative;display:inline-flex;align-items:baseline;gap:.4rem;}
+  .nav-links a i{font-style:normal;font-family:'Space Mono',monospace;font-size:.68rem;color:var(--latao);opacity:.85;}
+  .nav-links a:hover,.nav-links a.active{opacity:1;}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--latao);transition:width .25s ease;}
+  .nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+  .nav-cta{display:inline-flex;align-items:center;gap:.5rem;background:var(--whatsapp);color:#fff;padding:.55rem 1.1rem;border-radius:999px;font-size:.85rem;font-weight:600;text-decoration:none;white-space:nowrap;border:1px solid rgba(255,255,255,.15);}
+  .menu-toggle{display:none;background:none;border:0;color:var(--papel);font-size:1.5rem;cursor:pointer;}
 
   /* HERO */
   .hero{
-    background:linear-gradient(160deg, var(--carvao-claro) 0%, var(--preto) 75%);
-    color:var(--branco);padding:5rem 0;position:relative;overflow:hidden;
-  }
-  .hero::before{
-    content:"";position:absolute;inset:0;
-    background:radial-gradient(ellipse at 85% 10%, rgba(198,161,91,0.18), transparent 55%);
-    pointer-events:none;
+    background:
+      radial-gradient(ellipse 900px 500px at 88% -10%, rgba(124,34,48,0.35), transparent 60%),
+      radial-gradient(ellipse 700px 500px at -10% 110%, rgba(171,138,84,0.16), transparent 55%),
+      linear-gradient(165deg, var(--tinta-3) 0%, var(--tinta) 78%);
+    color:var(--papel);padding:6rem 0 5.5rem;position:relative;overflow:hidden;
   }
   @keyframes heroUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:3.5rem;align-items:center;text-align:left;position:relative;}
-  .hero-text .eyebrow{display:block;margin-bottom:1rem;animation:heroUp .8s ease .1s both;}
-  .hero-text h1{font-size:clamp(2rem,4vw,2.9rem);font-weight:700;line-height:1.18;margin-bottom:1.1rem;animation:heroUp .8s ease .2s both;}
-  .hero-text p.sub{color:var(--cinza);max-width:520px;margin-bottom:2rem;font-size:1.02rem;animation:heroUp .8s ease .32s both;}
-  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.6rem;animation:heroUp .8s ease .44s both;}
-  .btn{display:inline-flex;align-items:center;gap:.55rem;padding:.85rem 1.6rem;border-radius:6px;font-weight:600;font-size:.95rem;text-decoration:none;border:1px solid transparent;transition:transform .15s ease, opacity .15s ease;}
+  .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:4rem;align-items:center;text-align:left;position:relative;}
+  .hero-text .eyebrow{margin-bottom:1.2rem;animation:heroUp .8s ease .1s both;}
+  .hero-text h1{font-size:clamp(2.1rem,4.2vw,3.1rem);font-weight:600;line-height:1.14;margin-bottom:1.2rem;animation:heroUp .8s ease .2s both;}
+  .hero-text h1 em{font-style:italic;color:var(--latao-claro);font-weight:500;}
+  .hero-text p.sub{color:var(--texto-claro);max-width:500px;margin-bottom:2.2rem;font-size:1.03rem;animation:heroUp .8s ease .32s both;}
+  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.8rem;animation:heroUp .8s ease .44s both;}
+  .btn{display:inline-flex;align-items:center;gap:.55rem;padding:.85rem 1.6rem;border-radius:999px;font-weight:600;font-size:.92rem;text-decoration:none;border:1px solid transparent;transition:transform .15s ease, opacity .15s ease, background .2s ease;}
   .btn:hover{transform:translateY(-1px);}
   .btn-primary{background:var(--whatsapp);color:#fff;}
-  .btn-ghost{border-color:var(--borda);color:var(--branco);}
-  .btn-ghost:hover{background:rgba(247,246,243,0.06);}
+  .btn-ghost{border-color:var(--linha-clara);color:var(--papel);}
+  .btn-ghost:hover{background:rgba(246,241,230,0.07);}
 
-  .hero-stats{display:flex;gap:2.4rem;flex-wrap:wrap;animation:heroUp .8s ease .56s both;}
-  .hero-stat strong{display:block;font-family:'Inter',sans-serif;font-weight:700;font-size:1.4rem;color:var(--dourado);}
-  .hero-stat span{font-size:.76rem;color:var(--cinza);text-transform:uppercase;letter-spacing:.06em;}
+  .hero-stats{display:flex;animation:heroUp .8s ease .56s both;border-top:1px solid var(--linha-clara);padding-top:1.4rem;}
+  .hero-stat{padding-right:2rem;margin-right:2rem;border-right:1px solid var(--linha-clara);}
+  .hero-stat:last-child{border-right:0;margin-right:0;padding-right:0;}
+  .hero-stat strong{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:1.5rem;color:var(--latao-claro);}
+  .hero-stat span{font-family:'Space Mono',monospace;font-size:.66rem;color:var(--texto-claro);text-transform:uppercase;letter-spacing:.05em;}
 
-  .hero-photo{position:relative;animation:heroUp .9s ease .3s both;}
-  .hero-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 12%;border-radius:14px;border:1px solid rgba(198,161,91,.35);box-shadow:0 30px 60px rgba(0,0,0,.35);}
-  .hero-photo-badge{
-    position:absolute;left:-1.1rem;bottom:-1.1rem;
-    background:var(--branco);color:var(--preto);
-    padding:.85rem 1.1rem;border-radius:10px;box-shadow:0 14px 30px rgba(0,0,0,.3);
-    text-align:left;
+  .hero-photo{position:relative;animation:heroUp .9s ease .3s both;max-width:360px;margin-left:auto;}
+  .hero-photo-frame{position:relative;padding-top:1.6rem;}
+  .hero-photo-tab{
+    position:absolute;top:0;left:1.6rem;background:var(--latao);color:var(--tinta);
+    font-family:'Space Mono',monospace;font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;
+    padding:.4rem .9rem;border-radius:4px 4px 0 0;font-weight:700;
   }
-  .hero-photo-badge strong{display:block;font-family:'Playfair Display',serif;color:var(--preto);font-size:1rem;}
-  .hero-photo-badge span{font-size:.74rem;color:#666;}
+  .hero-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 12%;border-radius:4px;border:1px solid rgba(171,138,84,.4);box-shadow:0 35px 70px rgba(0,0,0,.45);}
+  .hero-seal{
+    position:absolute;left:-1.6rem;bottom:1.6rem;
+    width:112px;height:112px;border-radius:50%;
+    background:var(--papel);color:var(--tinta);border:2px solid var(--vinho);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    box-shadow:0 16px 32px rgba(0,0,0,.4);
+    transform:rotate(-9deg);text-align:center;
+  }
+  .hero-seal strong{font-family:'Fraunces',serif;font-size:1.35rem;line-height:1;color:var(--vinho);}
+  .hero-seal span{font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.08em;text-transform:uppercase;color:var(--texto-suave);margin-top:.2rem;}
 
-  @media (max-width:820px){
+  @media (max-width:860px){
     .hero-grid{grid-template-columns:1fr;text-align:center;}
     .hero-text{order:2;}
-    .hero-photo{order:1;max-width:300px;margin:0 auto 2.2rem;}
-    .hero-actions, .hero-stats{justify-content:center;}
+    .hero-photo{order:1;max-width:260px;margin:0 auto 3rem;}
+    .hero-actions{justify-content:center;}
+    .hero-stats{justify-content:center;flex-wrap:wrap;gap:1rem 0;}
+    .hero-stat{border-right:0;margin-right:1.2rem;padding-right:1.2rem;}
     .hero-text p.sub{margin-left:auto;margin-right:auto;}
-    .hero-photo-badge{left:50%;transform:translateX(-50%);bottom:-1rem;white-space:nowrap;}
+    .hero-seal{left:50%;transform:translateX(-50%) rotate(-6deg);bottom:-1.4rem;}
   }
 
   /* SECTIONS */
-  section{padding:5rem 0;}
-  .section-head{max-width:640px;margin:0 auto 3rem;text-align:center;}
-  .section-head h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-top:.6rem;}
-  .section-head p{color:#555;margin-top:.8rem;}
+  section{padding:6rem 0;}
+  .section-head{max-width:640px;margin:0 auto 3.4rem;text-align:center;}
+  .section-head .eyebrow{margin-bottom:.9rem;}
+  .section-head h2{font-size:clamp(1.7rem,3.2vw,2.35rem);}
+  .section-head p{color:var(--texto-suave);margin-top:.9rem;}
 
   .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease, transform .7s ease;}
   .reveal.is-visible{opacity:1;transform:translateY(0);}
 
   /* Sobre */
-  .sobre{display:grid;grid-template-columns:.95fr 1.15fr;gap:3.5rem;align-items:center;}
-  .sobre-texto p{color:#3a3d44;margin-bottom:1rem;}
-  .sobre-badges{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem;}
-  .badge-card{background:var(--carvao);color:var(--branco);padding:1.1rem 1.2rem;border-radius:10px;transition:transform .25s ease;}
+  .sobre{display:grid;grid-template-columns:.92fr 1.18fr;gap:4rem;align-items:center;}
+  .sobre-texto p{color:var(--texto);margin-bottom:1.1rem;}
+  .sobre-texto blockquote{
+    font-family:'Fraunces',serif;font-style:italic;font-weight:500;color:var(--vinho);
+    font-size:1.15rem;line-height:1.5;border-left:2px solid var(--latao);padding-left:1.2rem;margin:1.4rem 0;
+  }
+  .sobre-badges{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.6rem;}
+  .badge-card{background:var(--tinta);color:var(--papel);padding:1.15rem 1.25rem;border-radius:8px;transition:transform .25s ease;border:1px solid var(--linha-clara);}
   .badge-card:hover{transform:translateY(-3px);}
-  .badge-card strong{display:block;font-family:'Playfair Display',serif;color:var(--dourado);font-size:1.15rem;}
-  .badge-card span{font-size:.82rem;color:var(--cinza);}
+  .badge-card strong{display:block;font-family:'Fraunces',serif;color:var(--latao-claro);font-size:1.2rem;}
+  .badge-card span{font-family:'Space Mono',monospace;font-size:.7rem;color:var(--texto-claro);letter-spacing:.02em;}
   .sobre-visual{
-    background:linear-gradient(160deg, var(--carvao-claro), var(--preto));
-    border-radius:16px;aspect-ratio:4/5;
-    display:flex;align-items:center;justify-content:center;
-    position:relative;overflow:hidden;
+    border-radius:6px;aspect-ratio:4/5;
+    position:relative;overflow:hidden;border:1px solid var(--linha);
   }
   .sobre-visual img{width:100%;height:100%;object-fit:cover;}
-  .sobre-visual .placeholder{width:50%;height:50%;opacity:.85;}
-  .sobre-visual::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 20%, rgba(198,161,91,0.14), transparent 60%);pointer-events:none;}
+  .sobre-visual .caption{
+    position:absolute;left:0;right:0;bottom:0;padding:.9rem 1.2rem;
+    background:linear-gradient(0deg, rgba(0,0,0,.6), transparent);
+    color:var(--papel);font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.06em;text-transform:uppercase;
+  }
 
-  /* Áreas — lista numerada */
-  .areas{background:var(--branco);color:var(--preto);}
-  .areas-list{display:grid;grid-template-columns:1fr 1fr;column-gap:3rem;}
-  .area-row{display:flex;gap:1.2rem;align-items:flex-start;padding:1.5rem 0;border-bottom:1px solid #e7e5df;}
+  /* Áreas — artigos numerados */
+  .areas{background:var(--papel-2);}
+  .areas-list{display:grid;grid-template-columns:1fr 1fr;column-gap:3.2rem;}
+  .area-row{display:flex;gap:1.3rem;align-items:flex-start;padding:1.6rem 0;border-bottom:1px solid var(--linha);}
   .area-row:nth-child(1){transition-delay:.05s;}
   .area-row:nth-child(2){transition-delay:.12s;}
   .area-row:nth-child(3){transition-delay:.19s;}
   .area-row:nth-child(4){transition-delay:.26s;}
   .area-row:nth-child(5){transition-delay:.33s;}
   .area-row:nth-child(6){transition-delay:.4s;}
-  .area-num{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:600;color:var(--dourado);line-height:1;min-width:2.4rem;}
-  .area-row h3{font-size:1.02rem;font-weight:600;font-family:'Inter',sans-serif;margin-bottom:.3rem;}
-  .area-row p{font-size:.86rem;color:#666;}
-  @media (max-width:820px){ .areas-list{grid-template-columns:1fr;} }
+  .area-num{min-width:4.2rem;line-height:1.05;}
+  .area-num small{display:block;font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--latao);margin-bottom:.15rem;}
+  .area-num b{display:block;font-family:'Fraunces',serif;font-size:1.9rem;font-weight:600;color:var(--vinho);}
+  .area-row h3{font-size:1.04rem;font-weight:600;font-family:'Inter',sans-serif;margin-bottom:.3rem;}
+  .area-row p{font-size:.87rem;color:var(--texto-suave);}
+  @media (max-width:860px){ .areas-list{grid-template-columns:1fr;} }
 
-  /* Serviços (pills sobre fundo texturizado) */
+  /* Serviços */
   .servicos{
     position:relative;
     background:
-      linear-gradient(160deg, rgba(30,34,42,0.94), rgba(20,23,28,0.97)),
+      linear-gradient(165deg, rgba(28,23,18,0.93), rgba(20,16,12,0.97)),
       url('assets/img/justica-hero.png');
     background-size:cover;background-position:center 30%;
-    color:var(--branco);
+    color:var(--papel);
   }
-  .servicos .section-head p{color:var(--cinza);}
-  .servicos-pills{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;}
+  .servicos .section-head p{color:var(--texto-claro);}
+  .servicos-pills{display:flex;flex-wrap:wrap;gap:.65rem;justify-content:center;}
   .pill{
-    background:rgba(247,246,243,0.06);border:1px solid var(--borda);border-radius:999px;
-    padding:.5rem 1.1rem;font-size:.85rem;color:var(--branco);
+    background:rgba(246,241,230,0.05);border:1px solid var(--linha-clara);border-radius:999px;
+    padding:.55rem 1.15rem;font-size:.84rem;color:var(--papel);font-family:'Inter',sans-serif;
+    transition:border-color .2s ease, background .2s ease;
   }
+  .pill:hover{border-color:var(--latao);background:rgba(171,138,84,.08);}
 
   /* Desempenho */
   .desempenho{
     background:
-      linear-gradient(180deg, rgba(20,23,28,0.9), rgba(20,23,28,0.96)),
+      linear-gradient(180deg, rgba(20,16,12,0.92), rgba(20,16,12,0.97)),
       url('assets/img/martelo-macro.png');
     background-size:cover;background-position:center;
-    color:var(--branco);
+    color:var(--papel);
   }
   .desempenho .section-head{margin-bottom:0;}
-  .desempenho-inner{display:grid;grid-template-columns:.85fr 1.15fr;gap:3.5rem;align-items:center;padding-top:1rem;}
+  .desempenho-inner{display:grid;grid-template-columns:.82fr 1.18fr;gap:4rem;align-items:center;padding-top:1.2rem;}
   .desempenho-headline{text-align:left;}
-  .big-stat{font-family:'Playfair Display',serif;font-size:5rem;color:var(--dourado);line-height:1;margin:.6rem 0 .4rem;}
-  .desempenho-headline p{color:var(--cinza);font-size:.95rem;max-width:280px;}
+  .big-stat{font-family:'Fraunces',serif;font-size:5.2rem;font-weight:600;color:var(--latao-claro);line-height:1;margin:.7rem 0 .5rem;}
+  .desempenho-headline p{color:var(--texto-claro);font-size:.95rem;max-width:280px;}
   .desempenho-lista{display:flex;flex-direction:column;}
-  .linha{display:flex;align-items:baseline;gap:.6rem;padding:.8rem 0;border-bottom:1px solid var(--borda);font-size:.95rem;}
+  .linha{display:flex;align-items:baseline;gap:.6rem;padding:.85rem 0;border-bottom:1px solid var(--linha-clara);font-size:.95rem;}
   .linha .servico{white-space:nowrap;}
-  .linha .pontos{flex:1;border-bottom:1px dotted rgba(247,246,243,.3);transform:translateY(-4px);}
-  .linha .valor{white-space:nowrap;color:var(--dourado);font-weight:600;font-family:'Inter',sans-serif;}
-  .linha .qtd{color:#888;font-size:.76rem;white-space:nowrap;min-width:6.5rem;text-align:right;}
-  @media (max-width:820px){
+  .linha .pontos{flex:1;border-bottom:1px dotted rgba(246,241,230,.28);transform:translateY(-4px);}
+  .linha .valor{white-space:nowrap;color:var(--latao-claro);font-weight:700;font-family:'Space Mono',monospace;}
+  .linha .qtd{color:#8a8377;font-size:.76rem;white-space:nowrap;min-width:6.5rem;text-align:right;font-family:'Space Mono',monospace;}
+  @media (max-width:860px){
     .desempenho-inner{grid-template-columns:1fr;text-align:center;}
     .desempenho-headline{text-align:center;}
     .desempenho-headline p{margin:0 auto;}
@@ -191,27 +237,31 @@
   }
 
   /* Depoimentos */
-  .stars{color:var(--dourado);font-size:1rem;letter-spacing:.1em;margin-bottom:.7rem;}
-  .avaliacao-geral{display:flex;align-items:center;justify-content:center;gap:.6rem;margin-bottom:1rem;font-size:.95rem;color:#444;flex-wrap:wrap;}
-  .avaliacao-geral b{font-size:1.3rem;color:var(--preto);}
-  .avaliacao-sub{text-align:center;color:#777;font-size:.85rem;margin-bottom:2.5rem;}
+  .stars{color:var(--latao);font-size:.95rem;letter-spacing:.1em;margin-bottom:.8rem;}
+  .avaliacao-geral{display:flex;align-items:center;justify-content:center;gap:.6rem;margin-bottom:.8rem;font-size:.95rem;color:var(--texto);flex-wrap:wrap;}
+  .avaliacao-geral b{font-family:'Fraunces',serif;font-size:1.4rem;color:var(--vinho);}
+  .avaliacao-sub{text-align:center;color:var(--texto-suave);font-size:.85rem;margin-bottom:2.8rem;}
   .depo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;}
   .depo-card{
-    background:#fff;border:1px solid #eceae4;border-radius:12px;
-    padding:1.5rem;box-shadow:0 4px 18px rgba(0,0,0,.04);
-    transition:transform .3s ease, box-shadow .3s ease;
+    position:relative;background:#fff;border:1px solid var(--linha);border-radius:10px;
+    padding:1.7rem 1.6rem 1.5rem;box-shadow:0 4px 18px rgba(28,23,18,.04);
+    transition:transform .3s ease, box-shadow .3s ease;overflow:hidden;
   }
-  .depo-card:hover{transform:translateY(-5px);box-shadow:0 14px 32px rgba(0,0,0,.09);}
-  .depo-card p{font-size:.9rem;color:#3a3d44;}
-  .depo-quem{display:flex;align-items:center;gap:.7rem;margin-top:1.1rem;}
+  .depo-card::before{
+    content:"\201C";position:absolute;top:-.6rem;right:.8rem;font-family:'Fraunces',serif;font-style:italic;
+    font-size:4.5rem;color:var(--papel-2);z-index:0;line-height:1;
+  }
+  .depo-card:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(28,23,18,.1);}
+  .depo-card p{position:relative;font-size:.9rem;color:var(--texto);z-index:1;}
+  .depo-quem{position:relative;display:flex;align-items:center;gap:.7rem;margin-top:1.2rem;z-index:1;}
   .avatar{
     width:36px;height:36px;border-radius:50%;flex-shrink:0;
-    background:var(--preto);color:var(--dourado);
+    background:var(--tinta);color:var(--latao-claro);
     display:flex;align-items:center;justify-content:center;
-    font-weight:700;font-size:.9rem;
+    font-family:'Fraunces',serif;font-weight:600;font-size:.9rem;
   }
   .depo-quem strong{display:block;font-size:.9rem;}
-  .depo-quem span{font-size:.76rem;color:#888;}
+  .depo-quem span{font-size:.76rem;color:var(--texto-suave);}
 
   /* Botão flutuante do WhatsApp */
   .whatsapp-float{
@@ -235,36 +285,48 @@
   }
 
   /* Contato */
-  .contato{background:var(--carvao);color:var(--branco);}
-  .contato .section-head p{color:var(--cinza);}
-  .contato-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;}
-  .contato-info li{list-style:none;display:flex;gap:.9rem;margin-bottom:1.4rem;align-items:flex-start;}
-  .contato-info svg{width:20px;height:20px;color:var(--dourado);flex-shrink:0;margin-top:.15rem;}
-  .contato-info strong{display:block;font-size:.92rem;}
-  .contato-info span, .contato-info a{font-size:.88rem;color:var(--cinza);text-decoration:none;}
-  .contato-info a:hover{color:var(--branco);}
+  .contato{background:var(--tinta);color:var(--papel);}
+  .contato .section-head p{color:var(--texto-claro);}
+  .contato-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;}
+  .contato-info li{list-style:none;display:flex;gap:.9rem;margin-bottom:1.5rem;align-items:flex-start;}
+  .contato-info svg{width:19px;height:19px;color:var(--latao);flex-shrink:0;margin-top:.2rem;}
+  .contato-info strong{display:block;font-size:.9rem;font-family:'Space Mono',monospace;letter-spacing:.04em;text-transform:uppercase;font-weight:700;margin-bottom:.25rem;}
+  .contato-info span, .contato-info a{font-size:.92rem;color:var(--texto-claro);text-decoration:none;}
+  .contato-info a:hover{color:var(--papel);}
 
-  .form-card{background:var(--preto);border:1px solid var(--borda);border-radius:14px;padding:2rem;}
-  .form-card h3{font-size:1.1rem;margin-bottom:1.2rem;font-family:'Inter',sans-serif;font-weight:600;}
-  .field{margin-bottom:1rem;}
-  .field label{display:block;font-size:.8rem;color:var(--cinza);margin-bottom:.4rem;}
-  .field input, .field textarea{width:100%;padding:.7rem .85rem;border-radius:6px;border:1px solid var(--borda);background:rgba(247,246,243,0.04);color:var(--branco);font-family:'Inter',sans-serif;font-size:.9rem;}
-  .field textarea{resize:vertical;min-height:90px;}
-  .field input::placeholder, .field textarea::placeholder{color:#777;}
+  .form-card{background:transparent;padding:0;}
+  .form-card h3{font-size:1.05rem;margin-bottom:1.4rem;font-family:'Fraunces',serif;font-weight:600;color:var(--latao-claro);}
+  .field{margin-bottom:1.4rem;}
+  .field label{display:block;font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--texto-claro);margin-bottom:.5rem;}
+  .field input, .field textarea{
+    width:100%;padding:.6rem .1rem;border:none;border-bottom:1px solid var(--linha-clara);
+    background:transparent;color:var(--papel);font-family:'Inter',sans-serif;font-size:.95rem;
+    transition:border-color .2s ease;
+  }
+  .field input:focus, .field textarea:focus{outline:none;border-color:var(--latao);}
+  .field textarea{resize:vertical;min-height:80px;}
+  .field input::placeholder, .field textarea::placeholder{color:#6c655a;}
 
-  footer{background:var(--preto);color:var(--cinza);padding:2.2rem 0;border-top:1px solid var(--borda);font-size:.8rem;}
-  .footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.8rem;align-items:center;}
-  .demo-note{text-align:center;font-size:.75rem;color:#777;padding-top:1rem;margin-top:1rem;border-top:1px solid var(--borda);}
+  footer{background:var(--tinta);color:var(--texto-claro);padding:3rem 0 1.6rem;border-top:1px solid var(--linha-clara);font-size:.8rem;}
+  .footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1.4rem;align-items:center;}
+  .footer-seal{display:flex;align-items:center;gap:1rem;}
+  .footer-seal svg{width:64px;height:64px;flex-shrink:0;}
+  .footer-brand strong{display:block;font-family:'Fraunces',serif;color:var(--papel);font-size:1rem;}
+  .footer-brand span{font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.05em;}
+  .footer-copy{font-family:'Space Mono',monospace;font-size:.72rem;text-align:right;}
+  .demo-note{text-align:center;font-size:.72rem;color:#6c655a;padding-top:1.3rem;margin-top:1.6rem;border-top:1px solid var(--linha-clara);}
 
-  @media (max-width:820px){
+  @media (max-width:860px){
     .sobre, .contato-grid{grid-template-columns:1fr;}
     .sobre-visual{order:-1;aspect-ratio:16/9;}
   }
   @media (max-width:680px){
     .nav-links, .nav-cta{display:none;}
     .menu-toggle{display:block;}
-    .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--preto);padding:1.2rem 1.5rem;gap:1.1rem;border-bottom:1px solid var(--borda);}
+    .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--tinta);padding:1.3rem 1.5rem;gap:1.2rem;border-bottom:1px solid var(--linha-clara);}
     .nav-links.open a{opacity:1;}
+    .footer-inner{flex-direction:column;text-align:center;}
+    .footer-copy{text-align:center;}
   }
   @media (prefers-reduced-motion: reduce){
     .reveal{opacity:1 !important;transform:none !important;}
@@ -277,14 +339,17 @@
 <header>
   <div class="nav">
     <div class="logo">
-      <svg viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="1.4"><path d="M12 3v18M5 8l-3 6a4 4 0 0 0 8 0l-3-6ZM19 8l-3 6a4 4 0 0 0 8 0l-3-6ZM4 21h16M12 3l6 3M12 3 6 6"/></svg>
-      Denilson Galvão
+      <div class="logo-seal">DG</div>
+      <div class="logo-text">
+        <strong>Denilson Galvão</strong>
+        <span>Advocacia · Sorocaba</span>
+      </div>
     </div>
     <ul class="nav-links" id="nav-links">
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#areas">Áreas de Atuação</a></li>
-      <li><a href="#desempenho">Desempenho</a></li>
-      <li><a href="#contato">Contato</a></li>
+      <li><a href="#sobre"><i>01</i>Sobre</a></li>
+      <li><a href="#areas"><i>02</i>Áreas</a></li>
+      <li><a href="#desempenho"><i>03</i>Desempenho</a></li>
+      <li><a href="#contato"><i>04</i>Contato</a></li>
     </ul>
     <a class="nav-cta" href="https://wa.me/5515996849382" target="_blank" rel="noopener">Fale no WhatsApp</a>
     <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
@@ -294,9 +359,9 @@
 <section class="hero">
   <div class="container hero-grid">
     <div class="hero-text">
-      <span class="eyebrow">Denilson Galvão Advocacia</span>
-      <h1>Advocacia séria e próxima, em Sorocaba</h1>
-      <p class="sub">Atuação em Direito Trabalhista, Previdenciário, do Consumidor, de Família, Civil e Criminal — com atendimento ágil e mais de 40 demandas concluídas.</p>
+      <span class="eyebrow claro">Advocacia em Sorocaba — SP</span>
+      <h1>Cada processo é levado com <em>rigor</em>, clareza e compromisso pessoal</h1>
+      <p class="sub">Atuação em Direito Trabalhista, Previdenciário, do Consumidor, de Família, Civil e Criminal — com atendimento direto e mais de 40 demandas concluídas.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="https://wa.me/5515996849382" target="_blank" rel="noopener">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.1.2-.3.2-.4.1-.2 0-.3 0-.5s-.5-1.2-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 4 3.5.6.2 1 .4 1.3.5.6.2 1.1.1 1.5-.1.5-.2 1.4-.6 1.6-1.1.2-.5.2-.9.1-1Z"/></svg>
@@ -307,29 +372,34 @@
       <div class="hero-stats">
         <div class="hero-stat"><strong>5,0 ★</strong><span>49 avaliações Google</span></div>
         <div class="hero-stat"><strong>4,9</strong><span>41 demandas concluídas</span></div>
-        <div class="hero-stat"><strong>Sorocaba</strong><span>Jardim Maria Eugênia, SP</span></div>
+        <div class="hero-stat"><strong>Sorocaba</strong><span>Jd. Maria Eugênia, SP</span></div>
       </div>
     </div>
     <div class="hero-photo">
-      <img src="assets/img/retrato-denilson.png" alt="Dr. Denilson Galvão, advogado">
-      <div class="hero-photo-badge"><strong>Denilson Galvão</strong><span>OAB/SP — Sorocaba</span></div>
+      <div class="hero-photo-frame">
+        <span class="hero-photo-tab">OAB/SP</span>
+        <img src="assets/img/retrato-denilson.png" alt="Dr. Denilson Galvão, advogado">
+      </div>
+      <div class="hero-seal"><strong>5,0★</strong><span>Google</span></div>
     </div>
   </div>
 </section>
 
 <section id="sobre">
   <div class="container sobre">
-    <div class="sobre-visual reveal">
+    <div class="sobre-visual reveal grain">
       <img src="assets/img/mesa-escritorio.png" alt="Mesa de escritório com livros de direito e balança">
+      <div class="caption">Escritório · Sorocaba, SP</div>
     </div>
     <div class="sobre-texto reveal">
       <span class="eyebrow">Sobre o advogado</span>
       <h2>Compromisso com cada caso, do início ao fim</h2>
       <p>Denilson Galvão é advogado em Sorocaba, com atuação em Direito Trabalhista, Previdenciário, do Consumidor, de Família, Civil e Criminal. Reconhecido pela nota máxima no Google (5,0, com 49 avaliações) e por uma taxa de satisfação de 4,9 em mais de 40 demandas concluídas.</p>
-      <p>Atendimento no Jardim Maria Eugênia, em Sorocaba, com foco em clareza: cada cliente entende exatamente em que pé está seu processo, sem termos técnicos desnecessários.</p>
+      <blockquote>"Cada cliente entende exatamente em que pé está seu processo, sem termos técnicos desnecessários."</blockquote>
+      <p>Atendimento no Jardim Maria Eugênia, em Sorocaba, com foco em clareza e proximidade em cada etapa do caso.</p>
       <div class="sobre-badges">
-        <div class="badge-card"><strong>5,0 ★ Google</strong><span>49 avaliações de clientes</span></div>
-        <div class="badge-card"><strong>4,9 de nota</strong><span>Em 41 demandas realizadas</span></div>
+        <div class="badge-card"><strong>5,0 ★ Google</strong><span>49 AVALIAÇÕES DE CLIENTES</span></div>
+        <div class="badge-card"><strong>4,9 de nota</strong><span>EM 41 DEMANDAS REALIZADAS</span></div>
       </div>
     </div>
   </div>
@@ -344,37 +414,37 @@
     </div>
     <div class="areas-list">
       <div class="area-row reveal">
-        <span class="area-num">01</span>
+        <span class="area-num"><small>Art.</small><b>1º</b></span>
         <div><h3>Direito Trabalhista</h3><p>Defesa de direitos de trabalhadores e empregadores.</p></div>
       </div>
       <div class="area-row reveal">
-        <span class="area-num">02</span>
+        <span class="area-num"><small>Art.</small><b>2º</b></span>
         <div><h3>Direito Previdenciário</h3><p>Aposentadoria, benefícios do INSS e revisões.</p></div>
       </div>
       <div class="area-row reveal">
-        <span class="area-num">03</span>
+        <span class="area-num"><small>Art.</small><b>3º</b></span>
         <div><h3>Direito do Consumidor</h3><p>Defesa contra cobranças indevidas e produtos/serviços com defeito.</p></div>
       </div>
       <div class="area-row reveal">
-        <span class="area-num">04</span>
+        <span class="area-num"><small>Art.</small><b>4º</b></span>
         <div><h3>Direito de Família</h3><p>Divórcio, pensão alimentícia, guarda e inventário.</p></div>
       </div>
       <div class="area-row reveal">
-        <span class="area-num">05</span>
+        <span class="area-num"><small>Art.</small><b>5º</b></span>
         <div><h3>Direito Civil</h3><p>Contratos, indenizações e questões patrimoniais.</p></div>
       </div>
       <div class="area-row reveal">
-        <span class="area-num">06</span>
+        <span class="area-num"><small>Art.</small><b>6º</b></span>
         <div><h3>Direito Criminal</h3><p>Defesa em processos criminais e acompanhamento em inquéritos.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="servicos" id="servicos">
+<section class="servicos grain" id="servicos">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">Serviços</span>
+      <span class="eyebrow claro">Serviços</span>
       <h2>O que fazemos no dia a dia do seu processo</h2>
     </div>
     <div class="servicos-pills reveal">
@@ -397,7 +467,7 @@
 <section class="desempenho" id="desempenho">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">Desempenho</span>
+      <span class="eyebrow claro">Desempenho</span>
       <h2>Números que comprovam a qualidade do atendimento</h2>
     </div>
     <div class="desempenho-inner">
@@ -463,7 +533,7 @@
 <section class="contato" id="contato">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">Contato</span>
+      <span class="eyebrow claro">Contato</span>
       <h2>Vamos conversar sobre o seu caso</h2>
       <p>Envie uma mensagem e retorno o mais breve possível.</p>
     </div>
@@ -507,8 +577,24 @@
 <footer>
   <div class="container">
     <div class="footer-inner">
-      <span>© 2026 Denilson Galvão Advocacia</span>
-      <span>OAB/SP — a confirmar</span>
+      <div class="footer-seal">
+        <svg viewBox="0 0 100 100">
+          <defs>
+            <path id="selo-circulo" d="M 50,50 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0"/>
+          </defs>
+          <circle cx="50" cy="50" r="48" fill="none" stroke="#ab8a54" stroke-width="1"/>
+          <circle cx="50" cy="50" r="30" fill="none" stroke="#ab8a54" stroke-width="1"/>
+          <text font-family="Space Mono, monospace" font-size="7" fill="#c7ad82" letter-spacing="2">
+            <textPath href="#selo-circulo" startOffset="0%">DENILSON GALVÃO ADVOCACIA · SOROCABA SP ·</textPath>
+          </text>
+          <text x="50" y="54" font-family="Fraunces, serif" font-size="15" fill="#c7ad82" text-anchor="middle">DG</text>
+        </svg>
+        <div class="footer-brand">
+          <strong>Denilson Galvão</strong>
+          <span>OAB/SP — a confirmar</span>
+        </div>
+      </div>
+      <div class="footer-copy">© <span id="ano"></span> Denilson Galvão Advocacia<br>Sorocaba — SP</div>
     </div>
     <div class="demo-note">
       Este site é um protótipo de demonstração criado para apresentação ao advogado — ainda não é o site oficial.
@@ -542,6 +628,8 @@
     header.classList.toggle('scrolled', window.scrollY > 10);
   }, { passive: true });
 
+  document.getElementById('ano').textContent = new Date().getFullYear();
+
   var revealEls = document.querySelectorAll('.reveal');
   if('IntersectionObserver' in window){
     var io = new IntersectionObserver(function(entries){
@@ -552,6 +640,19 @@
     revealEls.forEach(function(el){ io.observe(el); });
   } else {
     revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+
+  var sections = ['sobre','areas','desempenho','contato'].map(function(id){ return document.getElementById(id); });
+  var navA = navLinks.querySelectorAll('a');
+  if('IntersectionObserver' in window){
+    var navIo = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          navA.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id); });
+        }
+      });
+    }, { threshold: 0.4 });
+    sections.forEach(function(s){ if(s) navIo.observe(s); });
   }
 </script>
 

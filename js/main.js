@@ -16,12 +16,47 @@
     });
   }
 
+  // Cabeçalho ganha sombra ao rolar; a margem acompanha a folha atual
   var header = document.querySelector('header');
-  if(header){
-    window.addEventListener('scroll', function(){
+  var margemTraco = document.getElementById('margem-traco');
+  var margemNum = document.getElementById('margem-num');
+
+  // Cada seção é uma "folha" dos autos
+  var folhas = ['topo','areas','sobre','diferenciais','equipe','servicos','desempenho','depoimentos','faq','contato']
+    .map(function(id){ return document.getElementById(id); })
+    .filter(Boolean);
+
+  function aoRolar(){
+    if(header){
       header.classList.toggle('scrolled', window.scrollY > 10);
-    }, { passive: true });
+    }
+
+    var rolavel = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = rolavel > 0 ? Math.max(0, Math.min(1, window.scrollY / rolavel)) : 0;
+
+    // O traço desce a margem conforme a leitura avança
+    if(margemTraco){
+      margemTraco.style.top = (pct * 100) + '%';
+    }
+
+    // A numeração acompanha a seção em leitura. A referência fica logo abaixo
+    // do cabeçalho, e não no meio da tela: seções curtas (Serviços tem 507px,
+    // menos que meia viewport) seriam puladas se medidas pelo centro.
+    if(margemNum && folhas.length){
+      var alturaCabecalho = header ? header.getBoundingClientRect().height : 0;
+      var referencia = window.scrollY + alturaCabecalho + 24;
+      var atual = 1;
+      for(var i = 0; i < folhas.length; i++){
+        if(folhas[i].offsetTop <= referencia){ atual = i + 1; }
+      }
+      var texto = atual < 10 ? '0' + atual : String(atual);
+      if(margemNum.textContent !== texto){ margemNum.textContent = texto; }
+    }
   }
+
+  window.addEventListener('scroll', aoRolar, { passive: true });
+  window.addEventListener('resize', aoRolar, { passive: true });
+  aoRolar();
 
   var anoEl = document.getElementById('ano');
   if(anoEl){ anoEl.textContent = new Date().getFullYear(); }

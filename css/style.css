@@ -380,16 +380,129 @@ footer{background:var(--tinta);color:var(--texto-claro);padding:3rem 0 1.6rem;bo
   .sobre, .contato-grid{grid-template-columns:1fr;}
   .sobre-visual{order:-1;aspect-ratio:16/9;}
 }
-@media (max-width:680px){
+/* O menu vira hambúrguer em 900px: com 5 itens, logo e botão, a barra já
+   não cabe em 768px — o CTA transbordava a viewport. */
+@media (max-width:900px){
   .nav-links, .nav-cta{display:none;}
   .menu-toggle{display:block;}
   .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--tinta);padding:1.3rem 1.5rem;gap:1.2rem;border-bottom:1px solid var(--linha-clara);}
   .nav-links.open a{opacity:1;}
+}
+@media (max-width:680px){
   .footer-inner{flex-direction:column;text-align:center;}
   .footer-copy, .footer-links{text-align:center;justify-content:center;}
 }
+/* ==========================================================================
+   Movimento — vocabulário de papel e carimbo
+   Os gestos vêm do mundo do dossiê: o carimbo que bate, o marca-texto que
+   passa, a régua que risca a folha, a numeração de folhas na margem.
+   ========================================================================== */
+
+/* --- Margem de folhas: numeração "fls." como nos autos de um processo --- */
+.margem{
+  position:fixed;left:1.9rem;top:0;bottom:0;z-index:40;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:.8rem;pointer-events:none;
+}
+/* A régua dupla da margem, como a linha vermelha do papel almaço */
+.margem-regua{
+  position:absolute;top:0;bottom:0;left:50%;width:3px;margin-left:-1.5px;
+  border-left:1px solid var(--linha);
+  border-right:1px solid var(--linha);
+}
+.margem-selo{
+  position:relative;
+  background:var(--papel);
+  border:1px solid var(--vinho);
+  padding:.6rem .4rem;
+  display:flex;flex-direction:column;align-items:center;gap:.15rem;
+  box-shadow:0 4px 14px rgba(28,23,18,.1);
+}
+.margem-fls{
+  font-family:'Space Mono',monospace;font-size:.52rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--texto-suave);
+}
+.margem-num{
+  font-family:'Fraunces',serif;font-size:1.05rem;line-height:1;
+  color:var(--vinho);font-weight:600;
+  font-variant-numeric:lining-nums tabular-nums;
+}
+.margem-traco{
+  position:absolute;left:50%;width:9px;height:1px;margin-left:-4.5px;
+  background:var(--latao);opacity:.5;
+}
+@media (max-width:1240px){ .margem{display:none;} }
+
+/* --- Carimbo: o selo do Google bate na foto ao abrir a página --- */
+@keyframes carimbar{
+  0%   {opacity:0;transform:scale(2.5) rotate(-26deg);}
+  55%  {opacity:1;transform:scale(.93) rotate(-6deg);}
+  74%  {transform:scale(1.05) rotate(-11deg);}
+  88%  {transform:scale(.99) rotate(-8.4deg);}
+  100% {opacity:1;transform:scale(1) rotate(-9deg);}
+}
+.hero-seal{animation:carimbar .85s cubic-bezier(.2,.75,.25,1) 1.05s both;}
+
+/* --- Marca-texto: uma passada de destaque ao percorrer as áreas --- */
+.area-row{position:relative;overflow:hidden;transition:padding-left .35s ease;}
+.area-row::before{
+  content:"";position:absolute;inset:0;z-index:0;
+  background:linear-gradient(90deg,
+    rgba(198,161,91,.16) 0%,
+    rgba(198,161,91,.09) 60%,
+    transparent 100%);
+  transform:scaleX(0);transform-origin:left center;
+  transition:transform .5s cubic-bezier(.16,1,.3,1);
+}
+.area-row:hover::before{transform:scaleX(1);}
+.area-row:hover{padding-left:.7rem;}
+.area-row > *{position:relative;z-index:1;}
+.area-row .area-icon{transition:border-color .35s ease, color .35s ease;}
+.area-row:hover .area-icon{border-color:var(--vinho);color:var(--vinho);}
+
+/* --- Régua: um risco corre sob o título ao revelar a seção --- */
+.section-head h2{position:relative;display:inline-block;}
+.section-head h2::after{
+  content:"";position:absolute;left:0;right:0;bottom:-.5rem;height:1px;
+  background:var(--latao);
+  transform:scaleX(0);transform-origin:left center;
+  transition:transform .8s cubic-bezier(.16,1,.3,1) .2s;
+}
+.section-head.is-visible h2::after{transform:scaleX(1);}
+
+/* --- Cascata nas linhas de desempenho --- */
+.desempenho-lista .linha{
+  opacity:0;transform:translateX(-14px);
+  transition:opacity .6s ease, transform .6s cubic-bezier(.16,1,.3,1);
+}
+.desempenho-lista.is-visible .linha{opacity:1;transform:translateX(0);}
+.desempenho-lista.is-visible .linha:nth-child(1){transition-delay:.06s;}
+.desempenho-lista.is-visible .linha:nth-child(2){transition-delay:.14s;}
+.desempenho-lista.is-visible .linha:nth-child(3){transition-delay:.22s;}
+.desempenho-lista.is-visible .linha:nth-child(4){transition-delay:.30s;}
+.desempenho-lista.is-visible .linha:nth-child(5){transition-delay:.38s;}
+.desempenho-lista.is-visible .linha:nth-child(6){transition-delay:.46s;}
+
+/* --- Cartões de depoimento: a aspa reage --- */
+.depo-card::before{transition:color .35s ease, transform .45s cubic-bezier(.16,1,.3,1);}
+.depo-card:hover::before{color:rgba(124,34,48,.14);transform:translateY(3px) scale(1.06);}
+
+@media (max-width:860px){
+  /* No mobile o selo fica centralizado; o carimbo precisa terminar ali */
+  @keyframes carimbar{
+    0%   {opacity:0;transform:translateX(-50%) scale(2.5) rotate(-22deg);}
+    55%  {opacity:1;transform:translateX(-50%) scale(.93) rotate(-3deg);}
+    74%  {transform:translateX(-50%) scale(1.05) rotate(-8deg);}
+    100% {opacity:1;transform:translateX(-50%) scale(1) rotate(-6deg);}
+  }
+}
+
 @media (prefers-reduced-motion: reduce){
   .reveal{opacity:1 !important;transform:none !important;}
+  .hero-seal{animation:none !important;}
+  .desempenho-lista .linha{opacity:1 !important;transform:none !important;}
+  .section-head h2::after{transform:scaleX(1) !important;}
+  .area-row::before{display:none;}
   *, *::before, *::after{animation-duration:0.001ms !important;animation-iteration-count:1 !important;transition-duration:0.001ms !important;scroll-behavior:auto !important;}
 }
 
